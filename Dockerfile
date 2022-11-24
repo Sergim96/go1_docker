@@ -56,3 +56,10 @@ RUN git clone -b v3.8.0 https://github.com/unitreerobotics/unitree_ros_to_real.g
 RUN git clone -b master https://github.com/unitreerobotics/unitree_ros.git
 WORKDIR /home/go1_ws
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; catkin_make'
+
+# personal setup 
+RUN echo "source /home/go1_ws/devel/setup.bash" >> ~/.bashrc
+RUN touch ~/.inputrc
+RUN echo "\"\e[B\": history-search-forward" >> ~/.inputrc
+RUN echo "\"\e[A\": history-search-backward" >> ~/.inputrc
+RUN apt-get install -y bash-completion
