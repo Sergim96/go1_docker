@@ -40,7 +40,7 @@ RUN git clone -b master https://github.com/unitreerobotics/unitree_ros.git
 WORKDIR /home/go1_ws
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; catkin_make'
 
-RUN apt install -y ros-noetic-joint-state-publisher*
+RUN apt install -y ros-melodic-joint-state-publisher*
 
 # personal setup 
 RUN echo "source /home/go1_ws/devel/setup.bash" >> ~/.bashrc
